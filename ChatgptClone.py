@@ -2,11 +2,12 @@
 import openai
 
 # Set up the OpenAI API client
-openai.api_key = "YOUR API KEY"
-# this loop will let us ask questions continuously and behave like ChatGPT
+openai.api_key = "YOUR-API-KEY"  # Replace with your new API key
+
+# This loop will let us ask questions continuously and behave like ChatGPT
 while True:
     # Set up the model and prompt
-    model_engine = "text-davinci-003"
+    model_engine = "gpt-3.5-turbo-instruct"  # Updated to the latest model version
     
     prompt = input('Enter new prompt: ')
 
@@ -23,8 +24,8 @@ while True:
         temperature=0.5,
     )
 
-    # extracting useful part of response
+    # Extracting useful part of response
     response = completion.choices[0].text
     
-    # printing response
+    # Printing response
     print(response)
